@@ -24,7 +24,7 @@ std::vector<Token> tokenize(std::string expression) {
     int expressionLen = expression.length();
     std::vector<Token> tokens;
 
-    while (pos <= expressionLen) {
+    while (pos < expressionLen) {
         char c = expression[pos];
 
         bool ischar = isalpha(c);
