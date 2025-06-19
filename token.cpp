@@ -36,8 +36,7 @@ std::vector<Token> tokenize(std::string expression) {
 
                 tokens.push_back(t);
             }
-            default:
-                {
+            default: {
                 Token t = {
                     .type = FOREIGN,
                     .value = "?"
@@ -47,12 +46,10 @@ std::vector<Token> tokenize(std::string expression) {
             }
         }
 
-
         pos++;
     }
 
     return tokens;
-
 }
 
 std::string tyToStr(TokenType t) {
@@ -62,7 +59,6 @@ std::string tyToStr(TokenType t) {
         case POUND:
             return "POUND";
         case IDENT:
-            return"IDENT";
+            return "IDENT";
     }
 }
-

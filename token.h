@@ -25,7 +25,9 @@ struct Token {
 };
 
 std::vector<Token> tokenize(std::string);
+
 std::string tyToStr(TokenType);
+
 bool slot_available(int, int);
 
 #endif //TOKEN_H
