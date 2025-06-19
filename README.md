@@ -24,3 +24,9 @@ CREATE TABLE IF NOT EXISTS TEST (
   id BIGINT PIMRARY KEY
 )
 ```
+
+Checklist:
+
+[ ] macro definitions
+[ ] include directive
+[ ] conditional compilation directives (--if,--endif,--ifdef, etc...)
