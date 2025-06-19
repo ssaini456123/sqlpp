@@ -14,9 +14,9 @@ bool slot_available(int pos, int expressionLen) {
 
     if (expressionLen < next) {
         return false;
-    } else {
-        return true;
     }
+
+    return true;
 }
 
 std::vector<Token> tokenize(std::string expression) {
@@ -26,6 +26,41 @@ std::vector<Token> tokenize(std::string expression) {
 
     while (pos <= expressionLen) {
         char c = expression[pos];
+
+        bool ischar = isalpha(c);
+
+        std::string identifier;
+        int next = pos;
+
+        bool identScanned = false;
+
+        while (ischar && slot_available(pos, expressionLen)) {
+            char nextChar = expression[next];
+
+            if (isspace(nextChar) || nextChar == '\n') {
+                // either end of line or the macro definition begins
+                identScanned = true;
+                break;
+            }
+
+            identifier += nextChar;
+
+            next++;
+        }
+
+        if (identScanned) {
+
+            pos = next;
+
+            Token t = {
+                .type = IDENT,
+                .value = identifier
+            };
+
+            tokens.push_back(t);
+
+            continue;
+        }
 
         switch (c) {
             case '#': {

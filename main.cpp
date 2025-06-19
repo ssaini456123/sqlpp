@@ -2,6 +2,6 @@
 #include "token.h"
 
 int main() {
-    auto vec = tokenize("wwwww#");
+    auto vec = tokenize("wwww\n444");
     return 0;
 }
