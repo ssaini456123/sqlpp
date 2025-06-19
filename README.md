@@ -27,6 +27,6 @@ CREATE TABLE IF NOT EXISTS TEST (
 
 Checklist:
 
-[ ] macro definitions
-[ ] include directive
-[ ] conditional compilation directives (--if,--endif,--ifdef, etc...)
+[ ] macro definitions<br>
+[ ] include directive<br>
+[ ] conditional compilation directives (--if,--endif,--ifdef, etc...)<br>
