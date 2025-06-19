@@ -37,7 +37,7 @@ std::vector<Token> tokenize(std::string expression) {
         while (ischar && slot_available(pos, expressionLen)) {
             char nextChar = expression[next];
 
-            if (isspace(nextChar) || nextChar == '\n') {
+            if (isspace(nextChar) || nextChar == '\000') {
                 // either end of line or the macro definition begins
                 identScanned = true;
                 break;
@@ -70,6 +70,7 @@ std::vector<Token> tokenize(std::string expression) {
                 };
 
                 tokens.push_back(t);
+                break;
             }
             default: {
                 Token t = {
@@ -78,6 +79,7 @@ std::vector<Token> tokenize(std::string expression) {
                 };
 
                 tokens.push_back(t);
+                break;
             }
         }
 
